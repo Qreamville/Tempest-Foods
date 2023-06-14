@@ -1,0 +1,14 @@
+p {
+  @include font-size($p-font-sizes);
+}
+
+.home {
+  @include container;
+}
+
+// add this to next.config.js
+
+//  sassOptions: {
+//     includePaths: [path.join(__dirname, "styles")],
+//     prependData: '@import "./styles/index.scss";',
+//   },
