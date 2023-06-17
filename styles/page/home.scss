@@ -5,10 +5,3 @@ p {
 .home {
   @include container;
 }
-
-// add this to next.config.js
-
-//  sassOptions: {
-//     includePaths: [path.join(__dirname, "styles")],
-//     prependData: '@import "./styles/index.scss";',
-//   },

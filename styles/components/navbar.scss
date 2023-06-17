@@ -1,0 +1,60 @@
+.nav {
+  background: $sienna;
+  height: 80px;
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+
+  > div {
+    @include container;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+
+  span {
+    color: $rose;
+    font-size: toRem(32px);
+  }
+}
+
+.nav-cta {
+  display: flex;
+  align-items: center;
+  column-gap: 24px;
+
+  .nav-search {
+    display: none;
+    align-items: center;
+    border: 1px solid #cbd8d2;
+    background-color: #fff;
+    outline: 0;
+    padding: 6px;
+    border-radius: 12px;
+
+    @include breakpoint(sm) {
+      display: flex;
+    }
+
+    input:focus {
+      outline: 0;
+    }
+
+    svg {
+      margin-right: 8px;
+    }
+  }
+
+  .nav-cart {
+    display: flex;
+    align-items: center;
+    column-gap: 6px;
+    cursor: pointer;
+  }
+}
