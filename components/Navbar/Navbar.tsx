@@ -17,7 +17,10 @@ const Navbar = () => {
       setColorChange(false);
     }
   };
-  window.addEventListener("scroll", changeNavbarColor);
+
+  if (typeof window !== "undefined") {
+    window.addEventListener("scroll", changeNavbarColor);
+  }
 
   return (
     <header className={`nav ${colorChange ? "nav-bg__change" : ""}`}>
