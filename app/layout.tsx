@@ -1,6 +1,7 @@
 import { Inter, Open_Sans } from "next/font/google";
 import "../styles/globals/reset.scss";
 import Navbar from "@/components/Navbar/Navbar";
+import CartModal from "@/components/Modal/CartModal";
 
 const inter = Open_Sans({ subsets: ["latin"] });
 
