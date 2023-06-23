@@ -56,6 +56,21 @@
     align-items: center;
     column-gap: 6px;
     cursor: pointer;
+
+    .cart-icon {
+      position: relative;
+
+      .badge {
+        background: red;
+        color: #fff;
+        border-radius: 9999px;
+        position: absolute;
+        height: 20px;
+        width: 20px;
+        top: -9px;
+        right: -9px;
+      }
+    }
   }
 }
 
@@ -83,8 +98,9 @@
     inset: 0;
     position: absolute;
     padding: 15px 20px;
+    overflow: auto !important;
 
-    @include breakpoint(md) {
+    @include breakpoint(sm) {
       width: 350px;
       height: 500px;
       margin-top: 50px;
@@ -136,5 +152,66 @@
   p {
     @include font-size($p-font-sizes);
     text-align: center;
+  }
+}
+
+.cart-items {
+  margin-top: 72px;
+}
+
+.cart-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+
+  .item-main {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+
+    img {
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    p {
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+  }
+
+  .item-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .item-cta {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+
+      > button {
+        color: red;
+        font-size: 0.9rem;
+      }
+
+      .item-btn {
+        display: flex;
+        align-items: center;
+      }
+
+      button:not(.item-cta > button) {
+        background-color: #e8e8e8;
+        font-size: 1rem;
+        border-radius: 2px;
+        padding: 2.5px;
+      }
+      .item-qty {
+        border: 1px solid #e4e8e6;
+        font-size: 0.75rem;
+        padding: 0.7px 10px;
+      }
+    }
   }
 }

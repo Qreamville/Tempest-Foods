@@ -19,7 +19,10 @@ const Cart = () => {
   return (
     <>
       <button className="nav-cart" onClick={onclick}>
-        <BiCartAlt size={24} />
+        <div className="cart-icon">
+          <BiCartAlt size={24} />
+          <div className="badge">1</div>
+        </div>
         <span>Cart</span>
       </button>
       {cartModal && <CartModal />}
