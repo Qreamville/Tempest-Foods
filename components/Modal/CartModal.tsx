@@ -7,7 +7,8 @@ import CartItem from "../Navbar/CartItem";
 const CartModal = () => {
   const onclick = useCartModal((state) => state.onClose);
 
-  const cart = [1, 1];
+  const cart = [1, 2];
+
   return (
     <div className="cart-modal">
       <div className="cart-modal__div">
@@ -22,7 +23,7 @@ const CartModal = () => {
           {cart.length > 0 ? (
             <div className="cart-items">
               {cart.map((item) => (
-                <CartItem />
+                <CartItem key={item} />
               ))}
             </div>
           ) : (
