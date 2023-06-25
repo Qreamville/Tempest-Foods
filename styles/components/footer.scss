@@ -1,0 +1,16 @@
+.footer {
+  background-color: $sienna;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid $rose;
+
+  p {
+    color: #000;
+    a {
+      cursor: pointer;
+    }
+  }
+}
