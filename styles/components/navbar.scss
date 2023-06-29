@@ -18,11 +18,9 @@
 .nav-brand {
   display: flex;
   align-items: center;
-
-  span {
-    color: $rose;
-    font-size: toRem(32px);
-  }
+  color: $rose;
+  font-size: toRem(32px);
+  font-weight: 700;
 }
 
 .nav-cta {

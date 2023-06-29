@@ -26,7 +26,7 @@ const Navbar = () => {
     <header className={`nav ${colorChange ? "nav-bg__change" : ""}`}>
       <div>
         <Link href="/" className="nav-brand">
-          <span className={inter.className}>tempest</span>
+          tempest
         </Link>
         <div className="nav-cta">
           <Search />
