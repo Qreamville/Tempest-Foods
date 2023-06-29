@@ -7,4 +7,5 @@ export const menus = [
   "Rice",
   "Juices",
   "Yam",
+  "Salad"
 ];
