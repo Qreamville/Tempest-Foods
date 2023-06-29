@@ -23,7 +23,6 @@ const Cart = () => {
           <BiCartAlt size={24} />
           <div className="badge">1</div>
         </div>
-        <span>Cart</span>
       </button>
       {cartModal && <CartModal />}
     </>
