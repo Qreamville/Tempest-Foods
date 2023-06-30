@@ -21,7 +21,7 @@ const Food = ({ item }: FoodProps) => {
       </div>
       <p>{item.title}</p>
       <div className="food-price">
-        <span>NGN (new Intl.NumberFormat().format(item.price)}</span>
+        <span>NGN {new Intl.NumberFormat().format(item.price)}</span>
       </div>
       <div className="food-cta">
         <div className="food-btn1">
