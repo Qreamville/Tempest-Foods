@@ -1,9 +1,22 @@
 import Food from "@/components/Home/Food";
 import Menu from "@/components/Home/Menu";
 import { menus } from "@/constants/menus";
+import { supabase } from "@/actions/getMeals";
 
-export default function Home() {
+export default async function Home() {
   const foods = [1, 2, 3];
+  let {
+    data: food,
+    error,
+    count,
+    status,
+    statusText,
+  } = await supabase.from("food").select("*");
+
+  console.log(food, "l");
+  console.log(error);
+  console.log(status);
+  console.log(statusText);
 
   return (
     <main className="home">
@@ -16,8 +29,8 @@ export default function Home() {
         </div>
       </div>
       <div className="home-foods">
-        {foods.map((item) => (
-          <Food key={item} />
+        {food?.map((item) => (
+          <Food key={item.id} item={item} />
         ))}
       </div>
     </main>

@@ -2,15 +2,26 @@ import Image from "next/image";
 import React from "react";
 import { FiMinus, FiPlus } from "react-icons/fi";
 
-const Food = () => {
+interface FoodProps {
+  item: {
+    id: number;
+    title: string;
+    imageSrc: string;
+    created_at: string;
+    category: string;
+    price: number;
+  };
+}
+
+const Food = ({ item }: FoodProps) => {
   return (
     <div className="food">
       <div className="food-img">
-        <Image src="/food2.jpg" alt="food" width={560} height={250} />
+        <Image src={item.imageSrc} alt="food" width={560} height={250} />
       </div>
-      <p>Asun Spaghetti with Red Pepper Sauce</p>
+      <p>{item.title}</p>
       <div className="food-price">
-        <span>NGN 3,500</span>
+        <span>NGN {item.price}</span>
       </div>
       <div className="food-cta">
         <div className="food-btn1">
