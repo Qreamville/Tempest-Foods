@@ -4,16 +4,14 @@ import { menus } from "@/constants/menus";
 import { supabase } from "@/actions/getMeals";
 
 export default async function Home() {
-  const foods = [1, 2, 3];
   let {
     data: food,
     error,
-    count,
     status,
     statusText,
   } = await supabase.from("food").select("*");
 
-  console.log(food, "l");
+  console.log(food);
   console.log(error);
   console.log(status);
   console.log(statusText);
