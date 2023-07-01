@@ -3,7 +3,7 @@ import { create } from "zustand";
 
 interface CartStore {
   cart: CartItemProps[];
-  addToCart: (item: ItemProps, qty: number) => void;
+  addToCart: (item: ItemProps) => void;
   removeFromCart: (item: ItemProps) => void;
   increaseQuantity: (item: CartItemProps) => void;
   reduceQuantity: (item: CartItemProps) => void;

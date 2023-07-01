@@ -7,6 +7,7 @@ import { FiPlus, FiMinus } from "react-icons/fi";
 const CartItem = ({ item }: CartProps) => {
   const increaseQuantity = useCart((state) => state.increaseQuantity);
   const reduceQuantity = useCart((state) => state.reduceQuantity);
+  const removeFromCart = useCart((state) => state.removeFromCart);
 
   return (
     <div className="cart-item">
@@ -24,11 +25,11 @@ const CartItem = ({ item }: CartProps) => {
               <FiMinus />
             </button>
             <span className="item-qty">{item.quantity}</span>
-            <button>
+            <button onClick={() => increaseQuantity(item)}>
               <FiPlus />
             </button>
           </div>
-          <button>Remove</button>
+          <button onClick={() => removeFromCart(item)}>Remove</button>
         </div>
       </div>
     </div>
