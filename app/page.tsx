@@ -1,3 +1,5 @@
+export const dynamic = "auto";
+
 import Food from "@/components/Home/Food";
 import { getMeals } from "@/actions/getMeals";
 import Menus from "@/components/Home/Menus";
