@@ -1,4 +1,5 @@
 import useCartModal from "@/hooks/useCartModal";
+import useCart from "@/hooks/useCart";
 import React from "react";
 import { BiX } from "react-icons/bi";
 import { GiShoppingCart } from "react-icons/gi";
@@ -6,8 +7,7 @@ import CartItem from "../Navbar/CartItem";
 
 const CartModal = () => {
   const onclick = useCartModal((state) => state.onClose);
-
-  const cart = [1, 2];
+  const cart = useCart((state) => state.cart);
 
   return (
     <div className="cart-modal">
@@ -23,7 +23,7 @@ const CartModal = () => {
           {cart.length > 0 ? (
             <div className="cart-items">
               {cart.map((item) => (
-                <CartItem key={item} />
+                <CartItem key={item.id} item={item} />
               ))}
             </div>
           ) : (

@@ -165,9 +165,13 @@ p {
     }
   }
 
-  .food-btn2 button {
+  .food-btn2 {
     color: #fff;
     font-size: 1rem;
     width: 100%;
   }
+}
+
+.btn-disabled {
+  cursor: not-allowed;
 }
