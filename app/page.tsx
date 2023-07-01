@@ -1,30 +1,17 @@
 import Food from "@/components/Home/Food";
-import Menu from "@/components/Home/Menu";
-import { menus } from "@/constants/menus";
-import { supabase } from "@/actions/getMeals";
+import { getMeals } from "@/actions/getMeals";
+import Menus from "@/components/Home/Menus";
 
-export default async function Home() {
-  let {
-    data: food,
-    error,
-    status,
-    statusText,
-  } = await supabase.from("food").select("*");
-
+export default async function Home({ searchParams }: any) {
+  const food = await getMeals(searchParams);
   console.log(food);
-  console.log(error);
-  console.log(status);
-  console.log(statusText);
+  console.log(searchParams.category);
 
   return (
     <main className="home">
       <h1 className="home-heading">Explore Menu</h1>
       <div className="home-menus">
-        <div>
-          {menus.map((menu) => (
-            <Menu key={menu} text={menu} />
-          ))}
-        </div>
+        <Menus />
       </div>
       <div className="home-foods">
         {food?.map((item) => (

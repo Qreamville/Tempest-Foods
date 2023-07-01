@@ -1,11 +1,12 @@
 export const menus = [
-  "All",
-  "Noodles/Pasta",
-  "Potato",
-  "Beans",
-  "Swallow",
-  "Rice",
-  "Juices",
-  "Yam",
-  "Salad"
+  "all",
+  "pasta",
+  "potato",
+  "beans",
+  "swallow",
+  "rice",
+  "juice",
+  "yam",
+  "gizzard",
+  "snail",
 ];
