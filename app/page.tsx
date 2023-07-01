@@ -1,4 +1,4 @@
-export const dynamic = "auto";
+export const dynamic = "force-dynamic";
 
 import Food from "@/components/Home/Food";
 import { getMeals } from "@/actions/getMeals";
