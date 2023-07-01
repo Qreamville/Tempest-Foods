@@ -4,8 +4,6 @@ import Menus from "@/components/Home/Menus";
 
 export default async function Home({ searchParams }: any) {
   const food = await getMeals(searchParams);
-  console.log(food);
-  console.log(searchParams.category);
 
   return (
     <main className="home">
