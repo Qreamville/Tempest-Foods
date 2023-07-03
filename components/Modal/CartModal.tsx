@@ -4,6 +4,7 @@ import React from "react";
 import { BiX } from "react-icons/bi";
 import { GiShoppingCart } from "react-icons/gi";
 import CartItem from "../Navbar/CartItem";
+import Checkout from "./Checkout";
 
 const CartModal = () => {
   const onclick = useCartModal((state) => state.onClose);
@@ -21,11 +22,14 @@ const CartModal = () => {
           </div>
 
           {cart.length > 0 ? (
-            <div className="cart-items">
-              {cart.map((item) => (
-                <CartItem key={item.id} item={item} />
-              ))}
-            </div>
+            <>
+              <div className="cart-items">
+                {cart.map((item) => (
+                  <CartItem key={item.id} item={item} />
+                ))}
+              </div>
+              <Checkout />
+            </>
           ) : (
             <div className="content-body">
               <div className="empty-cart">
