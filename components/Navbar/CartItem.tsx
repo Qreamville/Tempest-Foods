@@ -1,3 +1,4 @@
+import { formatPrice } from "@/actions/formatPrice";
 import useCart from "@/hooks/useCart";
 import { CartProps } from "@/types/Food";
 import Image from "next/image";
@@ -16,9 +17,7 @@ const CartItem = ({ item }: CartProps) => {
         <p>{item.title}</p>
       </div>
       <div className="item-info">
-        <span className="item-price">
-          NGN {new Intl.NumberFormat().format(item.price)}
-        </span>
+        <span className="item-price">NGN {formatPrice(item.price)}</span>
         <div className="item-cta">
           <div className="item-btn">
             <button onClick={() => reduceQuantity(item)}>

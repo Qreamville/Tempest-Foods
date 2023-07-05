@@ -1,3 +1,4 @@
+import { formatPrice } from "@/actions/formatPrice";
 import useCart from "@/hooks/useCart";
 import React from "react";
 
@@ -12,7 +13,7 @@ const Checkout = () => {
     <div className="checkout">
       <div className="checkout-text">
         <span>Total ({cart.length}meals)</span>
-        <span>NGN {totalPrice}</span>
+        <span>NGN {formatPrice(totalPrice)}</span>
       </div>
       <button className="checkout-btn">Checkout</button>
     </div>

@@ -5,6 +5,7 @@ import React, { useState, useEffect } from "react";
 import { FiMinus, FiPlus } from "react-icons/fi";
 import useCart from "@/hooks/useCart";
 import { CartItemProps, FoodProps } from "@/types/Food";
+import { formatPrice } from "@/actions/formatPrice";
 
 const Food = ({ item }: FoodProps) => {
   const addToCart = useCart((state) => state.addToCart);
@@ -23,7 +24,7 @@ const Food = ({ item }: FoodProps) => {
       </div>
       <p>{item.title}</p>
       <div className="food-price">
-        <span>NGN {new Intl.NumberFormat().format(item.price)}</span>
+        <span>NGN {formatPrice(item.price)}</span>
       </div>
       {inCart ? (
         <div className="food-cta">
