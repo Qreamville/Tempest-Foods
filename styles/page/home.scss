@@ -1,6 +1,4 @@
-p {
-  @include font-size($p-font-sizes);
-}
+@import "../components/cart.scss";
 
 .home {
   @include container;
