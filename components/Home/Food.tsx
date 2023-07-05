@@ -17,37 +17,35 @@ const Food = ({ item }: FoodProps) => {
   );
 
   return (
-    <>
-      <div className="food">
-        <div className="food-img">
-          <Image src={item.imageSrc} alt="food" width={560} height={250} />
-        </div>
-        <p>{item.title}</p>
-        <div className="food-price">
-          <span>NGN {new Intl.NumberFormat().format(item.price)}</span>
-        </div>
-        {inCart ? (
-          <div className="food-cta">
-            <div className="food-btn1">
-              <button
-                onClick={() => reduceQuantity(inCart)}
-                className={`${inCart?.quantity === 1 ? "btn-disabled" : ""}`}
-              >
-                <FiMinus />
-              </button>
-              <span className="food-qty">{inCart?.quantity}</span>
-              <button onClick={() => increaseQuantity(inCart)}>
-                <FiPlus />
-              </button>
-            </div>
-          </div>
-        ) : (
-          <button className="food-btn2" onClick={() => addToCart(item)}>
-            Add to Cart
-          </button>
-        )}
+    <div className="food">
+      <div className="food-img">
+        <Image src={item.imageSrc} alt="food" width={560} height={250} />
       </div>
-    </>
+      <p>{item.title}</p>
+      <div className="food-price">
+        <span>NGN {new Intl.NumberFormat().format(item.price)}</span>
+      </div>
+      {inCart ? (
+        <div className="food-cta">
+          <div className="food-btn1">
+            <button
+              onClick={() => reduceQuantity(inCart)}
+              className={`${inCart?.quantity === 1 ? "btn-disabled" : ""}`}
+            >
+              <FiMinus />
+            </button>
+            <span className="food-qty">{inCart?.quantity}</span>
+            <button onClick={() => increaseQuantity(inCart)}>
+              <FiPlus />
+            </button>
+          </div>
+        </div>
+      ) : (
+        <button className="food-btn2" onClick={() => addToCart(item)}>
+          Add to Cart
+        </button>
+      )}
+    </div>
   );
 };
 
