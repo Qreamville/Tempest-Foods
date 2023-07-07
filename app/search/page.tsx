@@ -19,7 +19,7 @@ const Search = async () => {
     if (!search) {
       back();
     }
-  }, [search, back]);
+  }, [search]);
 
   const { data: food } = await getSearchItems(search);
 
