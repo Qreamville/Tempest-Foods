@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import React, { useState, useEffect } from "react";
 import { FiMinus, FiPlus } from "react-icons/fi";
 import useCart from "@/hooks/useCart";
 import { CartItemProps, FoodProps } from "@/types/Food";

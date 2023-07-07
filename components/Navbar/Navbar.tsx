@@ -1,12 +1,9 @@
 "use client";
 
-import { Noto_Sans } from "next/font/google";
 import React, { useState } from "react";
 import Link from "next/link";
-import Search from "./Search";
+import SearchInput from "./SearchInput";
 import Cart from "./Cart";
-
-const inter = Noto_Sans({ subsets: ["latin"], weight: "900" });
 
 const Navbar = () => {
   const [colorChange, setColorChange] = useState(false);
@@ -29,7 +26,7 @@ const Navbar = () => {
           tempest
         </Link>
         <div className="nav-cta">
-          <Search />
+          <SearchInput />
           <Cart />
         </div>
       </div>
