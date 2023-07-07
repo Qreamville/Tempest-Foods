@@ -5,13 +5,15 @@ import ClientOnly from "@/components/ClientOnly";
 import Food from "@/components/Home/Food";
 import useSearch from "@/hooks/useSearch";
 import { useRouter } from "next/navigation";
-import React, { useEffect } from "react";
+import React, { useCallback, useEffect } from "react";
 
 const Search = async () => {
   const router = useRouter();
   const search = useSearch((state) => state.search);
 
-  const back = () => router.push("/");
+  const back = useCallback(() => {
+    () => router.push("/");
+  }, []);
 
   useEffect(() => {
     if (!search) {
