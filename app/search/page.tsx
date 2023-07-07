@@ -17,7 +17,7 @@ const Search = async () => {
     if (!search) {
       back();
     }
-  }, []);
+  }, [search, back]);
 
   const { data: food } = await getSearchItems(search);
 
