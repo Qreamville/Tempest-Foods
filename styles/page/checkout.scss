@@ -1,0 +1,35 @@
+.checkout-page {
+  @include container;
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+  .tab {
+    display: flex;
+    align-items: center;
+    column-gap: 30px;
+
+    div {
+      color: #9d9d9d;
+    }
+
+    .is-active {
+      color: $rose;
+      font-weight: 500;
+      font-size: 14px;
+      border-bottom: 2px solid $rose;
+    }
+  }
+
+  .info {
+    margin-top: 20px;
+
+    .header h4 {
+      font-size: 1.125rem;
+      margin-bottom: 5px;
+    }
+
+    .header span {
+      font-style: italic;
+    }
+  }
+}
