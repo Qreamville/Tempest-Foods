@@ -13,20 +13,20 @@ const Search = async () => {
 
   const back = useCallback(() => {
     router.push("/");
-  }, []);
+  }, [router]);
 
   useEffect(() => {
     if (!search) {
       router.push("/");
     }
-  }, [search]);
+  }, [search, router]);
 
   const { data: food } = await getSearchItems(search);
 
   return (
     <ClientOnly>
       <main className="search">
-        <div className="search-text">Showing results for "{search}"</div>
+        <div className="search-text">Showing results for {`"${search}"`}</div>
         {food?.length !== 0 ? (
           <div className="home-foods">
             {food?.map((item) => (

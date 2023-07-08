@@ -40,7 +40,7 @@ const Menu = ({ text }: MenuProps) => {
     );
 
     router.push(url);
-  }, [text, router, params]);
+  }, [text, router, params, category]);
 
   return (
     <div
