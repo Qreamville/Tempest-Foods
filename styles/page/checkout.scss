@@ -31,5 +31,51 @@
     .header span {
       font-style: italic;
     }
+
+    .info-form h4 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-top: 12px;
+    }
+
+    .info-form .contact {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .info-form .delivery-details {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .info-form label {
+      color: #9d9d9d;
+      font-size: 1rem;
+      margin: 14px 0;
+    }
+    .info-form input {
+      border: 1px solid #cbd8d2;
+      height: 40px;
+      border-radius: 8px;
+      outline: none;
+      padding: 6px 12px;
+      width: 100%;
+    }
+    .info-form input:focus {
+      outline: 2px solid $rose;
+    }
+
+    .info-form button {
+      width: 100%;
+      background-color: $rose;
+      height: 50px;
+      color: #fff;
+      border-radius: 8px;
+      margin-top: 24px;
+    }
+
+    .info-form .error {
+      color: red;
+    }
   }
 }
