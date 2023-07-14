@@ -79,3 +79,37 @@
     }
   }
 }
+
+.payment-modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .container {
+    height: 200px;
+    width: 300px;
+    background-color: $sienna;
+    padding: 12px 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  p {
+    font-size: 1.25rem;
+  }
+
+  button {
+    background-color: $rose;
+    width: 100%;
+    margin-top: 16px;
+    padding: 12px 0;
+    border-radius: 8px;
+    color: white;
+  }
+}
