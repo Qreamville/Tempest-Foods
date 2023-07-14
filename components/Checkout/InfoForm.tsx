@@ -5,6 +5,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { ZodType, z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { deliveryForm, infoForm } from "@/constants/checkoutForm";
+import usePaymentModal from "@/hooks/usePayment";
 
 interface FormData {
   email: string;
@@ -16,6 +17,7 @@ interface FormData {
 }
 
 const InfoForm = () => {
+  const onOpen = usePaymentModal((state) => state.onOpen);
   const schema: ZodType<FormData> = z.object({
     email: z.string().email(),
     fullName: z.string().min(3),
@@ -31,9 +33,7 @@ const InfoForm = () => {
     formState: { errors },
   } = useForm<FormData>({ resolver: zodResolver(schema) });
 
-  console.log(errors);
-
-  const onSubmit: SubmitHandler<FormData> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<FormData> = () => onOpen();
 
   return (
     <form className="info-form" onSubmit={handleSubmit(onSubmit)}>
@@ -42,7 +42,13 @@ const InfoForm = () => {
         {infoForm.map((data) => (
           <Fragment key={data.id}>
             <label htmlFor={data.id}>{data.name}</label>
-            <input type={data.type} id={data.id} {...register(`${data.id}`)} />
+            <input
+              type={data.type}
+              id={data.id}
+              {...register(`${data.id}`, {
+                valueAsNumber: data.id === "phoneNumber",
+              })}
+            />
             {errors[data.id] && (
               <span className="error">{errors[data.id]?.message}</span>
             )}

@@ -8,6 +8,7 @@ interface CartStore {
   removeFromCart: (item: ItemProps) => void;
   increaseQuantity: (item: CartItemProps) => void;
   reduceQuantity: (item: CartItemProps) => void;
+  clearCart: () => void;
 }
 
 const useCart = create<CartStore>()(
@@ -47,6 +48,7 @@ const useCart = create<CartStore>()(
           cart: updatedCart,
         }));
       },
+      clearCart: () => set({ cart: [] }),
     }),
     { name: "tempest-foods" }
   )

@@ -1,24 +1,21 @@
 "use client";
 
-import Payment from "@/components/Checkout/Payment";
 import YourInfo from "@/components/Checkout/YourInfo";
-import React, { useState } from "react";
+import PaymentModal from "@/components/Modal/PaymentModal";
+import usePaymentModal from "@/hooks/usePayment";
+import React from "react";
 
 const Checkout = () => {
-  const [tab, setTab] = useState("info");
-  const currentTab = tab === "info";
-
+  const paymentModal = usePaymentModal((state) => state.isOpen);
   return (
-    <main className="checkout-page">
-      <div className="tab">
-        <div className={`${currentTab ? "is-active" : ""}`}>Your info</div>
-        <div>Payment</div>
-      </div>
-      <div>
-        {tab === "info" && <YourInfo />}
-        {tab === "payment" && <Payment />}
-      </div>
-    </main>
+    <>
+      {paymentModal && <PaymentModal />}
+      <main className="checkout-page">
+        <div>
+          <YourInfo />
+        </div>
+      </main>
+    </>
   );
 };
 
